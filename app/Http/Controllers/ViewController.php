@@ -34,8 +34,9 @@ class ViewController extends Controller
 //            ])
 //            ->get()->toJson();
 //        return view('welcome',compact('cat'));
-        $cats = Category::all();
-        return view('welcome',compact('cats'));
+        $lang = App::getLocale();
+        $cats = Category::where('status',1)->select('name_'.$lang.' as name','id','slug','image')->get();
+        return view('index',compact('cats'));
     }
 
     public function getCategories(Request $request)

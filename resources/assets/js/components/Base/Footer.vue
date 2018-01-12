@@ -1,8 +1,8 @@
 <template>
     <footer class="footer">
         <section class="footer-up">
-            <!--<footer-content></footer-content>-->
-            <!--<footer-contacts></footer-contacts>-->
+            <footer-content></footer-content>
+            <footer-contacts></footer-contacts>
         </section>
         <section class="footer-down">
             <a :href="url.fb" target="_blank">
@@ -37,8 +37,8 @@
     </footer>
 </template>
 <script>
-//    import Footercontent from './Footercontent';
-//    import Footercontacts from './Footercontacts';
+    import Footercontent from './../Elements/Footercontent';
+    import Footercontacts from './../Elements/Footercontacts';
     export default {
         data(){
             return {
@@ -49,8 +49,8 @@
             }
         },
         components:{
-//            footerContent:Footercontent,
-//            footerContacts:Footercontacts,
+            footerContent:Footercontent,
+            footerContacts:Footercontacts,
         }
 
     }

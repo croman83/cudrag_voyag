@@ -1,18 +1,20 @@
 <template>
     <div>
-        main
-        <lang></lang>
+        <slider></slider>
+        <partners></partners>
     </div>
 </template>
 
 <script>
     import Lang from './../Elements/Lang.vue';
+    import Slider from './../Elements/Tslider';
+    import Partners from './../Elements/PartnersMain.vue';
     export default {
         mounted() {
             console.log('MainPage mounted.')
         },
         components:{
-          Lang
+            Slider,Partners
         },
         head:{
             title:{

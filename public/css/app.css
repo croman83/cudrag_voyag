@@ -4745,39 +4745,11 @@ a:focus {
     padding-right: 15px;
   }
 }
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 50px;
-  margin-bottom: 25px;
-}
-.breadcrumbs a {
-  color: black;
-  font-size: 14px;
-  font-weight: 300;
-}
-.breadcrumbs a:hover {
-  color: #ff99cc;
-}
-.breadcrumbs span {
-  color: #ff99cc;
-  cursor: default;
-}
-.breadcrumbs li {
+.footer-up {
+  width: 90%;
+  border: 1px solid black;
+  border-left: 0;
+  min-height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4785,24 +4757,68 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
-.breadcrumbs li:after {
+.footer-content {
+  width: 70%;
+}
+.footer-contacts {
+  width: 30%;
+}
+.footer-down {
+  padding: 25px 0;
+  text-align: center;
+}
+.footer-down a {
+  color: black;
+  margin: 0 5px;
+}
+.footer-down a svg {
+  display: block;
+}
+.footer-down a:hover svg {
+  fill: #ff99cc;
+}
+.footer-address {
+  position: relative;
+}
+.footer-address ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: calc(100% - 60px);
+  padding: 15px 0;
+}
+.footer-address ul li {
+  position: relative;
+  font-style: normal;
+  margin: 10px 0;
+  padding-left: 15px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.footer-address ul li:before {
   content: '';
   width: 5px;
   height: 5px;
   background-color: #ff99cc;
-  margin: 0 8px;
   display: block;
+  position: absolute;
+  left: 0;
+  top: 6px;
 }
-.breadcrumbs li:last-child:after {
-  display: none;
+.footer-address_logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 #app .app-content {
-  min-height: calc(100vh - 73px);
+  min-height: calc(100vh - 500px);
 }

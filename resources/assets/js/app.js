@@ -50,8 +50,11 @@ Vue.config.productionTip = false;
 import Header from './components/Base/Header.vue'
 import Footer from './components/Base/Footer.vue'
 import Loading from './components/Elements/Loading.vue'
+import Dots from './components/Elements/Dots.vue'
 
 import Main from './components/Pages/Main.vue'
+import Categories from './components/Pages/Categories.vue'
+import Blog from './components/Pages/Blog.vue'
 import PageNotFound from './components/Pages/PageNotFound.vue'
 
 
@@ -66,9 +69,9 @@ const router = new VueRouter({
     base: locale,
     routes: [
         { path: '/', component: Main , name:'home' },
-        { path: '/category', component: PageNotFound },
-        // { path: '/category/:slug', component: OneCategory, props:true , name:'category' },
-        // { path: '/service', component: Services, props:true , name:'service' },
+        { path: '/catalog', component: Categories },
+        { path: '/catalog/:slug', component: Categories, props:true , name:'catalog' },
+        { path: '/blog', component: Blog, props:true , name:'blogs' },
         // { path: '/service/:slug', component: OneCategory, props:true , name:'services' },
         // { path: '/product/:slug', component: ProductDefault, props:true , name:'product' },
         { path: '/*', component: PageNotFound },
@@ -83,6 +86,7 @@ const app = new Vue({
         appHeader:Header,
         appFooter:Footer,
         loading:Loading,
+        Dots
     },
     mounted(){
         this.$loading = this.$refs.loading;
@@ -92,12 +96,16 @@ const app = new Vue({
 
 router.beforeEach((to, from, next) => {
     router.app.$loading.start();
-    router.app.$refs.header.hide();
-    setTimeout(next,300);
+    router.app.$refs.header.$refs.header_menu.show = false;
+    next();
+    // setTimeout(next,300);
 });
 router.afterEach((to, from) => {
     router.app.$loading.finish();
     Velocity(document.body,"scroll", { offset: "0", mobileHA: false });
+    setTimeout(function () {
+        router.app.$refs.dots.makeDots();
+    },700)
 
 });
 
