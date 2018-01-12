@@ -1,0 +1,61 @@
+@import "styles/normalize.less";
+@import "styles/lesshat.less";
+@import "styles/helpers.less";
+@import "styles/variables.less";
+@import (inline) "styles/animate.css";
+@import (inline) "../../../node_modules/lightgallery.js/dist/css/lightgallery.min.css";
+@import (inline) "../../../node_modules/lightgallery.js/dist/css/lg-transitions.css";
+
+
+//#lg-download{
+//  display: none;
+//}
+//.app-content{
+//  min-height:50vh;
+//  width:100%;
+//}
+.header{
+  .container;
+  .flex(row,nowrap,space-between,center);
+  position: relative;
+}
+.footer{
+
+}
+.breadcrumbs{
+  .reset-around;
+  list-style:none;
+  .flex(row,wrap,flex-start,center);
+  margin-top:50px;
+  margin-bottom:25px;
+  a{
+    color:black;
+    font-size:14px;
+    font-weight:300;
+    &:hover{
+      color:@color-pink;
+    }
+  }
+  span{
+    color:@color-pink;
+    cursor: default;
+  }
+  li{
+    .flex(row,nowrap,flex-start,center);
+    &:after{
+      content:'';
+      .size(5px);
+      background-color: @color-pink;
+      margin:0 8px;
+      display: block;
+    }
+    &:last-child{
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+#app .app-content{
+  min-height: ~'calc(100vh - 73px)';
+}
