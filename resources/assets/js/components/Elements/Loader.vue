@@ -1,0 +1,189 @@
+<template>
+    <transition name="faderouterfront" mode="out-in">
+        <div class="loader-wrap" v-if="show">
+            <div class="loader">
+                <div class="loader__figure">
+                    <p class="loader__label"></p>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<script>
+    export default {
+        props:{
+            show:{
+                default:false,
+            }
+        }
+    }
+</script>
+<style scoped lang="less">
+    @import "./../../../less/styles/lesshat.less";
+    @import "./../../../less/styles/helpers.less";
+    @import "./../../../less/styles/variables.less";
+
+    .loader-wrap{
+        position: absolute;
+        .size(100%);
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 99;
+        top:0;
+        left:0;
+    }
+    .loader,
+    .loader__figure {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .loader {
+        overflow: visible;
+        padding-top: 2em;
+        height: 0;
+        width: 2em;
+    }
+
+    .loader__figure {
+        height: 0;
+        width: 0;
+        box-sizing: border-box;
+        border: 0 solid @color-pink;
+        border-radius: 50%;
+        -webkit-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        -moz-animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation: loader-figure 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .loader__label {
+        float: left;
+        margin-left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin: 0.5em 0 0 50%;
+        font-size: 0.875em;
+        letter-spacing: 0.1em;
+        line-height: 1.5em;
+        color: @color-pink;
+        white-space: nowrap;
+        -webkit-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        -moz-animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+        animation: loader-label 1.15s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    @-webkit-keyframes loader-figure {
+        0% {
+            height: 0;
+            width: 0;
+            background-color: @color-pink;
+        }
+        29% {
+            background-color: @color-pink;
+        }
+        30% {
+            height: 2em;
+            width: 2em;
+            background-color: transparent;
+            border-width: 1em;
+            opacity: 1;
+        }
+        100% {
+            height: 2em;
+            width: 2em;
+            border-width: 0;
+            opacity: 0;
+            background-color: transparent;
+        }
+    }
+    @-moz-keyframes loader-figure {
+        0% {
+            height: 0;
+            width: 0;
+            background-color: @color-pink;
+        }
+        29% {
+            background-color: @color-pink;
+        }
+        30% {
+            height: 2em;
+            width: 2em;
+            background-color: transparent;
+            border-width: 1em;
+            opacity: 1;
+        }
+        100% {
+            height: 2em;
+            width: 2em;
+            border-width: 0;
+            opacity: 0;
+            background-color: transparent;
+        }
+    }
+    @keyframes loader-figure {
+        0% {
+            height: 0;
+            width: 0;
+            background-color: @color-pink;
+        }
+        29% {
+            background-color: @color-pink;
+        }
+        30% {
+            height: 2em;
+            width: 2em;
+            background-color: transparent;
+            border-width: 1em;
+            opacity: 1;
+        }
+        100% {
+            height: 2em;
+            width: 2em;
+            border-width: 0;
+            opacity: 0;
+            background-color: transparent;
+        }
+    }
+    @-webkit-keyframes loader-label {
+        0% {
+            opacity: 0.25;
+        }
+        30% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.25;
+        }
+    }
+    @-moz-keyframes loader-label {
+        0% {
+            opacity: 0.25;
+        }
+        30% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.25;
+        }
+    }
+    @keyframes loader-label {
+        0% {
+            opacity: 0.25;
+        }
+        30% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.25;
+        }
+    }
+
+</style>

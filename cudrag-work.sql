@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 12, 2018 at 08:02 PM
+-- Generation Time: Jan 13, 2018 at 09:03 PM
 -- Server version: 5.7.19
 -- PHP Version: 7.1.7
 
@@ -85,8 +85,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `order`, `slug`, `created_at`, `updated_at`, `image`, `name_ru`, `name_ro`, `name_en`, `status`) VALUES
-(1, NULL, 1, 'dekor', '2018-01-11 15:06:42', '2018-01-12 06:12:28', 'categories/January2018/8PfXmU7V5vaTW9DRwuhT.jpg', 'Декор', 'Decorul', 'Decor', 1),
-(2, NULL, 1, 'decoration', '2018-01-11 16:34:37', '2018-01-12 07:11:22', 'categories/January2018/2OSlCGTpX3WwbX0BBmGZ.jpg', 'Оформление', 'Decorarea', 'Decoration', 1);
+(4, NULL, 1, 'oformlenie', '2018-01-13 10:16:53', '2018-01-13 10:16:53', 'categories/January2018/pmZUlmT6bfvubkDAzbRB.jpg', 'Оформление', 'Оформление', 'Оформление', 1),
+(5, NULL, 1, 'wedding', '2018-01-13 10:17:14', '2018-01-13 10:17:14', 'categories/January2018/GWfpv6pf8Y0ghAkML5e9.jpg', 'Wedding', 'Wedding', 'Wedding', 1),
+(6, NULL, 1, 'new', '2018-01-13 13:18:55', '2018-01-13 13:18:55', 'categories/January2018/Yn1ceVoqooWNZhQJyWDN.jpg', 'new', 'new', 'new', 1);
 
 -- --------------------------------------------------------
 
@@ -153,10 +154,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (36, 5, 'name', 'text', 'name', 1, 1, 1, 1, 1, 1, '', 2),
 (37, 5, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '', 3),
 (38, 5, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 4),
-(39, 4, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(40, 4, 'parent_id', 'select_dropdown', 'parent_id', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 2),
-(41, 4, 'order', 'text', 'order', 1, 1, 1, 1, 1, 1, '{\"default\":1}', 3),
-(43, 4, 'slug', 'text', 'slug', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name_en\"}}', 4),
+(39, 4, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, NULL, 8),
+(40, 4, 'parent_id', 'select_dropdown', 'parent_id', 0, 0, 0, 0, 0, 0, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 9),
+(41, 4, 'order', 'text', 'order', 1, 0, 1, 1, 1, 1, '{\"default\":1,\"display\":{\"width\":\"4\"}}', 4),
+(43, 4, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name_en\"},\"display\":{\"width\":\"4\"}}', 5),
 (44, 4, 'created_at', 'timestamp', 'created_at', 0, 0, 1, 0, 0, 0, NULL, 10),
 (45, 4, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, NULL, 11),
 (46, 6, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
@@ -167,11 +168,11 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (51, 1, 'seo_title', 'text', 'seo_title', 0, 1, 1, 1, 1, 1, '', 14),
 (52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '', 15),
 (53, 3, 'role_id', 'text', 'role_id', 0, 1, 1, 1, 1, 1, NULL, 9),
-(54, 4, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"600\",\"height\":null}}', 5),
-(55, 4, 'name_ru', 'text', 'Name Ru', 0, 1, 1, 1, 1, 1, NULL, 7),
-(56, 4, 'name_ro', 'text', 'Name Ro', 0, 1, 1, 1, 1, 1, NULL, 8),
-(57, 4, 'name_en', 'text', 'Name En', 0, 1, 1, 1, 1, 1, NULL, 6),
-(58, 4, 'status', 'checkbox', 'Status', 1, 1, 1, 1, 1, 1, NULL, 9),
+(54, 4, 'image', 'image', 'Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"600\",\"height\":null},\"display\":{\"width\":\"4\"}}', 7),
+(55, 4, 'name_ru', 'text', 'Name Ru', 0, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 1),
+(56, 4, 'name_ro', 'text', 'Name Ro', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 2),
+(57, 4, 'name_en', 'text', 'Name En', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 3),
+(58, 4, 'status', 'checkbox', 'Status', 1, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 6),
 (59, 3, 'locale', 'text', 'Locale', 1, 0, 1, 0, 1, 1, NULL, 10),
 (60, 7, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (61, 7, 'product_id', 'number', 'Product Id', 0, 1, 1, 1, 1, 1, NULL, 2),
@@ -237,7 +238,33 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (121, 13, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 18),
 (122, 13, 'slug', 'text', 'Slug', 0, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title_ru\",\"forceUpdate\":true}}', 19),
 (123, 13, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 20),
-(124, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 21);
+(124, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 21),
+(125, 14, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(126, 14, 'name_ru', 'text', 'Name Ru', 0, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 2),
+(127, 14, 'name_ro', 'text', 'Name Ro', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 3),
+(128, 14, 'name_en', 'text', 'Name En', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 4),
+(129, 14, 'status', 'checkbox', 'Status', 1, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 7),
+(130, 14, 'slug', 'text', 'Slug', 0, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name_ru\",\"forceUpdate\":true},\"display\":{\"width\":\"4\"}}', 6),
+(131, 14, 'image', 'multiple_images', 'Изображение', 0, 0, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1200\",\"height\":null},\"quality\":\"100%\",\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 11),
+(132, 14, 'price', 'number', 'Price', 0, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 5),
+(133, 14, 'description_ru', 'rich_text_box', 'Description Ru', 0, 0, 1, 1, 1, 1, NULL, 12),
+(134, 14, 'description_ro', 'rich_text_box', 'Description Ro', 0, 0, 1, 1, 1, 1, NULL, 13),
+(135, 14, 'description_en', 'rich_text_box', 'Description En', 0, 0, 1, 1, 1, 1, NULL, 14),
+(136, 14, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 15),
+(137, 14, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 16),
+(138, 15, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(139, 15, 'name_ru', 'text', 'Name Ru', 0, 1, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 2),
+(140, 15, 'name_ro', 'text', 'Name Ro', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 3),
+(141, 15, 'name_en', 'text', 'Name En', 0, 0, 1, 1, 1, 1, '{\"display\":{\"width\":\"4\"}}', 4),
+(142, 15, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 5),
+(143, 15, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
+(148, 14, 'product_belongstomany_tag_relationship', 'relationship', 'Тэг', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Tag\",\"table\":\"Tags\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"name_ru\",\"pivot_table\":\"product_tag\",\"pivot\":\"1\"}', 8),
+(150, 15, 'tag_belongstomany_product_relationship', 'relationship', 'Продукты', 0, 0, 0, 0, 0, 0, '{\"model\":\"App\\\\Product\",\"table\":\"Products\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"name_ru\",\"pivot_table\":\"product_tag\",\"pivot\":\"1\"}', 7),
+(151, 14, 'product_belongsto_category_relationship', 'relationship', 'Категория', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Categorie\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name_ru\",\"pivot_table\":\"Partners\",\"pivot\":\"0\"}', 9),
+(152, 14, 'category_id', 'select_dropdown', 'Category Id', 0, 0, 1, 1, 1, 1, NULL, 17),
+(153, 15, 'tag_belongsto_category_relationship', 'relationship', 'Категория', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Categorie\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name_ru\",\"pivot_table\":\"Partners\",\"pivot\":\"0\"}', 8),
+(154, 15, 'category_id', 'number', 'Category Id', 0, 1, 1, 1, 1, 1, NULL, 7),
+(155, 14, 'category_image', 'image', 'Изображение для категории', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"600\",\"height\":null}}', 10);
 
 -- --------------------------------------------------------
 
@@ -277,7 +304,9 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (10, 'mainslider', 'mainslider', 'Mainslider', 'Mainsliders', 'voyager-photos', 'App\\Mainslider', NULL, NULL, NULL, 1, 0, '2018-01-12 08:52:21', '2018-01-12 08:53:16'),
 (11, 'mainsliders', 'mainsliders', 'Слайдер', 'Слайдеры', 'voyager-photos', 'App\\Mainslider', NULL, NULL, NULL, 1, 0, '2018-01-12 08:56:53', '2018-01-12 11:15:15'),
 (12, 'Partners', 'partners', 'Партнеры', 'Партнеры', 'voyager-people', 'App\\Partner', NULL, NULL, NULL, 1, 0, '2018-01-12 11:38:42', '2018-01-12 11:39:08'),
-(13, 'blogs', 'blogs', 'Блог', 'Блоги', 'voyager-news', 'App\\Blog', NULL, NULL, NULL, 1, 0, '2018-01-12 13:57:40', '2018-01-12 14:05:12');
+(13, 'blogs', 'blogs', 'Блог', 'Блоги', 'voyager-news', 'App\\Blog', NULL, NULL, NULL, 1, 0, '2018-01-12 13:57:40', '2018-01-12 14:05:12'),
+(14, 'Products', 'products', 'Продукт', 'Продукты', 'voyager-bag', 'App\\Product', NULL, NULL, NULL, 1, 0, '2018-01-13 08:47:29', '2018-01-13 08:47:29'),
+(15, 'Tags', 'tags', 'Тэги', 'Тэги', 'voyager-tag', 'App\\Tag', NULL, NULL, NULL, 1, 0, '2018-01-13 08:53:45', '2018-01-13 08:53:45');
 
 -- --------------------------------------------------------
 
@@ -359,22 +388,24 @@ CREATE TABLE `menu_items` (
 
 INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class`, `color`, `parent_id`, `order`, `created_at`, `updated_at`, `route`, `parameters`) VALUES
 (1, 1, 'Главная', '', '_self', 'voyager-boat', '#000000', NULL, 1, '2018-01-11 14:24:08', '2018-01-11 14:58:21', 'voyager.dashboard', 'null'),
-(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 5, '2018-01-11 14:24:08', '2018-01-12 11:41:15', 'voyager.media.index', NULL),
-(3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 9, '2018-01-11 14:24:08', '2018-01-12 11:41:15', 'voyager.posts.index', NULL),
-(4, 1, 'Пользователи', '', '_self', 'voyager-person', '#000000', NULL, 12, '2018-01-11 14:24:08', '2018-01-12 11:41:03', 'voyager.users.index', 'null'),
+(2, 1, 'Media', '', '_self', 'voyager-images', NULL, NULL, 8, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.media.index', NULL),
+(3, 1, 'Posts', '', '_self', 'voyager-news', NULL, NULL, 12, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.posts.index', NULL),
+(4, 1, 'Пользователи', '', '_self', 'voyager-person', '#000000', NULL, 15, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.users.index', 'null'),
 (5, 1, 'Категории', '', '_self', 'voyager-categories', '#000000', NULL, 2, '2018-01-11 14:24:08', '2018-01-12 11:41:03', 'voyager.categories.index', 'null'),
-(6, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 10, '2018-01-11 14:24:08', '2018-01-12 11:41:03', 'voyager.pages.index', NULL),
-(7, 1, 'Права', '', '_self', 'voyager-lock', '#000000', NULL, 11, '2018-01-11 14:24:08', '2018-01-12 11:41:03', 'voyager.roles.index', 'null'),
-(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 6, '2018-01-11 14:24:08', '2018-01-12 11:41:15', NULL, NULL),
+(6, 1, 'Pages', '', '_self', 'voyager-file-text', NULL, NULL, 13, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.pages.index', NULL),
+(7, 1, 'Права', '', '_self', 'voyager-lock', '#000000', NULL, 14, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.roles.index', 'null'),
+(8, 1, 'Tools', '', '_self', 'voyager-tools', NULL, NULL, 9, '2018-01-11 14:24:08', '2018-01-13 10:20:11', NULL, NULL),
 (9, 1, 'Menu Builder', '', '_self', 'voyager-list', NULL, 8, 1, '2018-01-11 14:24:08', '2018-01-12 11:14:20', 'voyager.menus.index', NULL),
-(10, 1, 'Database', '', '_self', 'voyager-data', NULL, 8, 2, '2018-01-11 14:24:08', '2018-01-12 11:14:20', 'voyager.database.index', NULL),
-(11, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 8, 3, '2018-01-11 14:24:08', '2018-01-12 11:14:20', 'voyager.compass.index', NULL),
-(12, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 8, 4, '2018-01-11 14:24:08', '2018-01-12 11:14:20', 'voyager.hooks', NULL),
-(13, 1, 'Настройки', '', '_self', 'voyager-settings', '#000000', NULL, 7, '2018-01-11 14:24:08', '2018-01-12 11:41:15', 'voyager.settings.index', 'null'),
-(14, 1, 'Productimages', '/admin/productimages', '_self', 'voyager-images', NULL, NULL, 8, '2018-01-11 17:55:47', '2018-01-12 11:41:15', NULL, NULL),
-(16, 1, 'Слайдер', '/admin/mainsliders', '_self', 'voyager-photos', '#000000', NULL, 4, '2018-01-12 08:56:53', '2018-01-12 11:41:15', NULL, ''),
+(10, 1, 'Database', '', '_self', 'voyager-data', NULL, 8, 2, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.database.index', NULL),
+(11, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 8, 3, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.compass.index', NULL),
+(12, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 8, 4, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.hooks', NULL),
+(13, 1, 'Настройки', '', '_self', 'voyager-settings', '#000000', NULL, 10, '2018-01-11 14:24:08', '2018-01-13 10:20:11', 'voyager.settings.index', 'null'),
+(14, 1, 'Productimages', '/admin/productimages', '_self', 'voyager-images', NULL, NULL, 11, '2018-01-11 17:55:47', '2018-01-13 10:20:11', NULL, NULL),
+(16, 1, 'Слайдер', '/admin/mainsliders', '_self', 'voyager-photos', '#000000', NULL, 5, '2018-01-12 08:56:53', '2018-01-13 10:19:57', NULL, ''),
 (17, 1, 'Партнеры', '/admin/partners', '_self', 'voyager-people', '#000000', NULL, 3, '2018-01-12 11:38:42', '2018-01-12 11:41:15', NULL, ''),
-(18, 1, 'Блоги', '/admin/blogs', '_self', 'voyager-news', NULL, NULL, 13, '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL, NULL);
+(18, 1, 'Блоги', '/admin/blogs', '_self', 'voyager-news', NULL, NULL, 7, '2018-01-12 13:57:41', '2018-01-13 10:20:11', NULL, NULL),
+(19, 1, 'Продукты', '/admin/products', '_self', 'voyager-bag', NULL, NULL, 4, '2018-01-13 08:47:29', '2018-01-13 10:19:57', NULL, NULL),
+(20, 1, 'Тэги', '/admin/tags', '_self', 'voyager-tag', NULL, NULL, 6, '2018-01-13 08:53:45', '2018-01-13 10:20:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -565,7 +596,17 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (62, 'read_blogs', 'blogs', '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL),
 (63, 'edit_blogs', 'blogs', '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL),
 (64, 'add_blogs', 'blogs', '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL),
-(65, 'delete_blogs', 'blogs', '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL);
+(65, 'delete_blogs', 'blogs', '2018-01-12 13:57:41', '2018-01-12 13:57:41', NULL),
+(66, 'browse_Products', 'Products', '2018-01-13 08:47:29', '2018-01-13 08:47:29', NULL),
+(67, 'read_Products', 'Products', '2018-01-13 08:47:29', '2018-01-13 08:47:29', NULL),
+(68, 'edit_Products', 'Products', '2018-01-13 08:47:29', '2018-01-13 08:47:29', NULL),
+(69, 'add_Products', 'Products', '2018-01-13 08:47:29', '2018-01-13 08:47:29', NULL),
+(70, 'delete_Products', 'Products', '2018-01-13 08:47:29', '2018-01-13 08:47:29', NULL),
+(71, 'browse_Tags', 'Tags', '2018-01-13 08:53:45', '2018-01-13 08:53:45', NULL),
+(72, 'read_Tags', 'Tags', '2018-01-13 08:53:45', '2018-01-13 08:53:45', NULL),
+(73, 'edit_Tags', 'Tags', '2018-01-13 08:53:45', '2018-01-13 08:53:45', NULL),
+(74, 'add_Tags', 'Tags', '2018-01-13 08:53:45', '2018-01-13 08:53:45', NULL),
+(75, 'delete_Tags', 'Tags', '2018-01-13 08:53:45', '2018-01-13 08:53:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -658,7 +699,17 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (62, 1),
 (63, 1),
 (64, 1),
-(65, 1);
+(65, 1),
+(66, 1),
+(67, 1),
+(68, 1),
+(69, 1),
+(70, 1),
+(71, 1),
+(72, 1),
+(73, 1),
+(74, 1),
+(75, 1);
 
 -- --------------------------------------------------------
 
@@ -697,6 +748,62 @@ CREATE TABLE `Productimages` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Products`
+--
+
+CREATE TABLE `Products` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name_ru` text COLLATE utf8_unicode_ci,
+  `name_ro` text COLLATE utf8_unicode_ci,
+  `name_en` text COLLATE utf8_unicode_ci,
+  `status` int(11) NOT NULL DEFAULT '0',
+  `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` text COLLATE utf8_unicode_ci,
+  `price` int(11) DEFAULT NULL,
+  `description_ru` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description_ro` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description_en` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL,
+  `category_image` text COLLATE utf8_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `Products`
+--
+
+INSERT INTO `Products` (`id`, `name_ru`, `name_ro`, `name_en`, `status`, `slug`, `image`, `price`, `description_ru`, `description_ro`, `description_en`, `created_at`, `updated_at`, `category_id`, `category_image`) VALUES
+(1, 'product1', 'product1', 'product1', 1, 'product1', '[\"products\\/January2018\\/yOy42gSUUEIoODy2EffX.jpg\",\"products\\/January2018\\/sBB94foqfvRm4nyMlYdR.jpg\",\"products\\/January2018\\/6SWx4jsnDnCVg2jeSAjH.jpg\"]', 97, '<p><span style=\"color: #76838f; font-family: \'Open Sans\', sans-serif;\">Description Ru</span></p>', '<p><span style=\"color: #76838f; font-family: \'Open Sans\', sans-serif;\">Description Ro</span></p>', '<p><span style=\"color: #76838f; font-family: \'Open Sans\', sans-serif;\">Description En</span></p>', '2018-01-13 09:47:00', '2018-01-13 11:35:55', 4, 'products/January2018/20D0aKRaaM7rjVfRyXDS.jpg'),
+(2, 'test2', 'test2', 'test2', 1, 'test2', NULL, NULL, NULL, NULL, NULL, '2018-01-13 14:23:47', '2018-01-13 14:30:30', 4, 'products/January2018/3WEOxOJcdkVhWCiNUHTh.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_tag`
+--
+
+CREATE TABLE `product_tag` (
+  `ids` int(10) UNSIGNED NOT NULL,
+  `product_id` int(11) DEFAULT NULL,
+  `tag_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `product_tag`
+--
+
+INSERT INTO `product_tag` (`ids`, `product_id`, `tag_id`, `created_at`, `updated_at`) VALUES
+(6, 1, 1, NULL, NULL),
+(8, 2, 1, NULL, NULL),
+(9, 2, 2, NULL, NULL),
+(10, 2, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -751,7 +858,33 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 (7, 'admin.description', 'Admin Description', 'Добро пожаловать в админку', '', 'text', 2, 'Admin'),
 (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
 (9, 'admin.icon_image', 'Admin Icon Image', 'settings/January2018/n1JH9RUvTF85r4sSjcDG.png', '', 'image', 4, 'Admin'),
-(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin'),
+(11, 'site.product_per_page', 'Продуктов на страницу', '12', NULL, 'text', 6, 'Site');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Tags`
+--
+
+CREATE TABLE `Tags` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name_ru` text COLLATE utf8_unicode_ci,
+  `name_ro` text COLLATE utf8_unicode_ci,
+  `name_en` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `category_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `Tags`
+--
+
+INSERT INTO `Tags` (`id`, `name_ru`, `name_ro`, `name_en`, `created_at`, `updated_at`, `category_id`) VALUES
+(1, 'Свадьба', 'Wedding', 'Wedding', '2018-01-13 08:57:51', '2018-01-13 13:17:01', 4),
+(2, 'Куматрия', 'Cumatria', 'Cumatria', '2018-01-13 08:58:00', '2018-01-13 13:53:45', 4),
+(3, 'Декор', 'Decor', 'Decor', '2018-01-13 09:55:41', '2018-01-13 13:19:04', 6);
 
 -- --------------------------------------------------------
 
@@ -936,6 +1069,19 @@ ALTER TABLE `Productimages`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `Products`
+--
+ALTER TABLE `Products`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `products_slug_unique` (`slug`);
+
+--
+-- Indexes for table `product_tag`
+--
+ALTER TABLE `product_tag`
+  ADD PRIMARY KEY (`ids`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -948,6 +1094,12 @@ ALTER TABLE `roles`
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `settings_key_unique` (`key`);
+
+--
+-- Indexes for table `Tags`
+--
+ALTER TABLE `Tags`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `translations`
@@ -976,17 +1128,17 @@ ALTER TABLE `blogs`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `mainsliders`
 --
@@ -1001,7 +1153,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -1021,7 +1173,7 @@ ALTER TABLE `Partners`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 --
 -- AUTO_INCREMENT for table `permission_groups`
 --
@@ -1038,6 +1190,16 @@ ALTER TABLE `posts`
 ALTER TABLE `Productimages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `Products`
+--
+ALTER TABLE `Products`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `product_tag`
+--
+ALTER TABLE `product_tag`
+  MODIFY `ids` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
@@ -1046,7 +1208,12 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `Tags`
+--
+ALTER TABLE `Tags`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `translations`
 --

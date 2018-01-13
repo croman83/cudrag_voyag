@@ -54,6 +54,7 @@ import Dots from './components/Elements/Dots.vue'
 
 import Main from './components/Pages/Main.vue'
 import Categories from './components/Pages/Categories.vue'
+import Category from './components/Pages/Category.vue'
 import Blog from './components/Pages/Blog.vue'
 import PageNotFound from './components/Pages/PageNotFound.vue'
 
@@ -70,7 +71,7 @@ const router = new VueRouter({
     routes: [
         { path: '/', component: Main , name:'home' },
         { path: '/catalog', component: Categories },
-        { path: '/catalog/:slug', component: Categories, props:true , name:'catalog' },
+        { path: '/catalog/:slug', component: Category, props:true , name:'catalog' },
         { path: '/blog', component: Blog, props:true , name:'blogs' },
         // { path: '/service/:slug', component: OneCategory, props:true , name:'services' },
         // { path: '/product/:slug', component: ProductDefault, props:true , name:'product' },

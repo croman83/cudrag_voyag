@@ -30,3 +30,4 @@ Route::get('/partners_short', function () {
 Route::get('/blog-list', function () {
     return BlogList::collection(Blog::where('status',1)->get());
 });
+Route::post('/products', 'ResourceController@products');

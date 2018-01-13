@@ -50,7 +50,7 @@
     @import "./../../../less/styles/variables.less";
     .blog{
         &-wrap{
-            width:1400px;
+            width:@s1400;
             margin:50px auto;
         }
         &-title{
