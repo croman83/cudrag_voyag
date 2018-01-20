@@ -3,6 +3,7 @@
         'appName' => config('app.name'),
         'locale' => $locale = app()->getLocale(),
         'categories'=>$cats,
+        'services'=>$serv,
         'translations' => json_decode(file_get_contents(resource_path("lang/{$locale}/{$locale}.json")), true)
 
     ];

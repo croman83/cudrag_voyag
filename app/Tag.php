@@ -11,4 +11,8 @@ class Tag extends Model
     {
         return $this->hasMany('App\Product');
     }
+    public function categoriesId()
+    {
+        return $this->belongsTo('App\Category','id');
+    }
 }

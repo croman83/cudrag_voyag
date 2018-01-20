@@ -15,7 +15,7 @@ Vue.use(VueHead);
 
 import VueI18n from 'vue-i18n';
 Vue.use(VueI18n);
-
+import store from './store';
 
 
 require('lightgallery.js');
@@ -55,14 +55,14 @@ import Dots from './components/Elements/Dots.vue'
 import Main from './components/Pages/Main.vue'
 import Categories from './components/Pages/Categories.vue'
 import Category from './components/Pages/Category.vue'
+import Services from './components/Pages/Services.vue'
+import Service from './components/Pages/Service.vue'
 import Blog from './components/Pages/Blog.vue'
+import Product from './components/Pages/Product.vue'
+import Partners from './components/Pages/Partners.vue'
+import Partner from './components/Pages/Partner.vue'
+import Contacts from './components/Pages/Contacts.vue'
 import PageNotFound from './components/Pages/PageNotFound.vue'
-
-
-
-import store from './store';
-
-
 
 
 const router = new VueRouter({
@@ -73,8 +73,12 @@ const router = new VueRouter({
         { path: '/catalog', component: Categories },
         { path: '/catalog/:slug', component: Category, props:true , name:'catalog' },
         { path: '/blog', component: Blog, props:true , name:'blogs' },
-        // { path: '/service/:slug', component: OneCategory, props:true , name:'services' },
-        // { path: '/product/:slug', component: ProductDefault, props:true , name:'product' },
+        { path: '/contacts', component: Contacts, props:true , name:'contacts' },
+        { path: '/services', component: Services, props:true , name:'services' },
+        { path: '/services/:slug', component: Service, props:true , name:'service' },
+        { path: '/partners', component: Partners, props:true , name:'partners' },
+        { path: '/partners/:slug', component: Partner, props:true , name:'partner' },
+        { path: '/product/:slug', component: Product, props:true , name:'product' },
         { path: '/*', component: PageNotFound },
     ]
 });

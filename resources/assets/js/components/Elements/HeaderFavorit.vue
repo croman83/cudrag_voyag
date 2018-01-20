@@ -23,6 +23,7 @@
             }
         },
         mounted(){
+            var _store = this;
             this.$store.watch(
                 function (state) {
                     return state.favorits;

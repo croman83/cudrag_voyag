@@ -8,8 +8,9 @@ use Lang;
 use Redirect;
 use Illuminate\Http\Request;
 use App;
-use TCG\Voyager\Models\Category as Category;
+use App\Category;
 use LaravelLocalization;
+use App\Service;
 
 
 class ViewController extends Controller
@@ -36,7 +37,8 @@ class ViewController extends Controller
 //        return view('welcome',compact('cat'));
         $lang = App::getLocale();
         $cats = Category::where('status',1)->select('name_'.$lang.' as name','id','slug','image')->get();
-        return view('index',compact('cats'));
+        $serv = Service::where('status',1)->select('name_'.$lang.' as name','id','slug','category_image')->get();
+        return view('index',compact('cats','serv'));
     }
 
     public function getCategories(Request $request)

@@ -31,3 +31,11 @@ Route::get('/blog-list', function () {
     return BlogList::collection(Blog::where('status',1)->get());
 });
 Route::post('/products', 'ResourceController@products');
+Route::post('/product', 'ResourceController@product');
+Route::get('/services', 'ResourceController@services');
+Route::get('/service/{slug}', 'ResourceController@service');
+
+Route::get('/partners', 'ResourceController@partners');
+Route::get('/partners/{slug}', 'ResourceController@partner');
+
+Route::get('/contacts', 'ResourceController@contacts');

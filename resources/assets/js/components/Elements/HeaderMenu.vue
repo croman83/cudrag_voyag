@@ -34,8 +34,16 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
+                        <li class="deep">
                             <router-link to="/services">{{ $t('menu.services') }}</router-link>
+                            <ul class="cat-deep">
+                                <li v-for="service in services" :key="service.id">
+                                    <router-link :to="'/services/' + service.slug">{{ service.name }}</router-link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <router-link to="/works">{{ $t('menu.works') }}</router-link>
                         </li>
                         <li>
                             <router-link to="/blog">{{ $t('menu.blog') }}</router-link>
@@ -60,6 +68,7 @@
             return{
                 show:false,
                 categories:window.config.categories ? window.config.categories : [],
+                services:window.config.services ? window.config.services : [],
             }
         },
         components:{

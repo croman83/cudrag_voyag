@@ -13,10 +13,10 @@
 
 
 
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
 Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
 //    Route::get( 'set-language', [ 'as' => 'set-language', 'uses' => 'LangController@setLocale' ] );
 //    Route::get('/{vue?}','ViewController@index')->where('vue', '[\/\w\.-]*');
@@ -25,4 +25,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     Route::get( 'set-language', [ 'as' => 'set-language', 'uses' => 'LangController@setLocale' ] );
     Route::get('/{vue?}','ViewController@index')->where('vue', '[\/\w\.-]*');
 });
+
+
+
 
