@@ -6,7 +6,7 @@
                 <ul class="ul">
                     <li v-for="(item,index) in slider"
                         :class="{active:index === slider_index}"
-                        @click="changeSlide(index)">
+                        @click="changeSlide(index)" :key="index">
                         <span>{{ item['name_'+lang] }}</span>
                     </li>
                 </ul>
@@ -14,7 +14,8 @@
             <div class="sliderMain-wrapper">
                 <div class="sliderMain">
                     <el-ramka v-for="(item,index) in slider" :key="'slide' + index">
-                        <div :style="{backgroundImage : 'url(/storage/'+item.image+ ')'}" class="sliderMain-slide">
+                        <div  class="sliderMain-slide">
+                            <img :src="`/storage/${item.image}`" alt="">
                             <router-link :to="item.link" class="sliderMain-title">{{ item['title_'+lang] }}</router-link>
                         </div>
                     </el-ramka>
@@ -201,6 +202,11 @@
             background-size:cover;
             position: relative;
             pointer-events: all;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
         &-menu{
             .title{

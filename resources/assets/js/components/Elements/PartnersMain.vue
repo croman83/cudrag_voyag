@@ -6,6 +6,7 @@
         <div class="prt-wrap">
             <div class="prt-block"
                  :class="makeCol(index)"
+                 :key="index"
                  v-for="(item,index) in partners" >
                 <e-ramka>
                     <div class="img" :style="{backgroundImage:'url(/storage/'+item.category_image+')'}"></div>

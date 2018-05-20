@@ -12,6 +12,9 @@ return [
     | based disks are available to your application. Just store away!
     |
     */
+    'url' => env('APP_URL').'/cudrag-voyag/public/storage/',
+
+    // 'url' => env('APP_URL').'/public_html/public/storage',
 
     'default' => env('FILESYSTEM_DRIVER', 'local'),
 
@@ -51,7 +54,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'storage',
+            'url' => env('APP_URL').'storage/',
             'visibility' => 'public',
         ],
 

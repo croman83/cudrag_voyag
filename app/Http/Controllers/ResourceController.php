@@ -26,7 +26,7 @@ class ResourceController extends Controller
             ->first();
 
 
-        // filter status
+        // filter status 
         $products = Product::join('product_tag','product_tag.product_id','=','products.id')->where('status',1)->where(function ($query) use ($category,$filter){
 
             if(isset($category['id'])){

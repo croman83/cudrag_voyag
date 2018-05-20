@@ -1789,7 +1789,7 @@ var Mix = __webpack_require__("./resources/assets/js/mixins.js");
         }
     },
     mounted: function mounted() {
-        Mix.WGL(this.initmap);
+        // Mix.WGL(this.initmap);
     }
 });
 
@@ -2147,6 +2147,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -2300,6 +2301,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Ramka___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Ramka__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Title__ = __webpack_require__("./resources/assets/js/components/Elements/Title.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Title___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Title__);
+//
 //
 //
 //
@@ -3183,7 +3185,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.base[data-v-16bf13c7] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row nowrap;\n          flex-flow: row nowrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 90%;\n  max-width: 1480px;\n  margin: 50px auto;\n}\n.sliderMain-wrapper[data-v-16bf13c7] {\n  width: 70%;\n}\n.sliderMain-slide[data-v-16bf13c7] {\n  height: 580px;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n  pointer-events: all;\n}\n.sliderMain-menu .title[data-v-16bf13c7] {\n  font-size: 18px;\n  text-transform: uppercase;\n  font-weight: 300;\n  margin: 0;\n  line-height: 1;\n}\n.sliderMain-menu .ul[data-v-16bf13c7] {\n  margin: 25px 0;\n  padding: 0;\n  list-style: none;\n}\n.sliderMain-menu .ul li[data-v-16bf13c7] {\n  font-size: 18px;\n  font-weight: 300;\n  margin: 12px 0;\n  cursor: pointer;\n}\n.sliderMain-menu .ul li.active span[data-v-16bf13c7] {\n  background-color: #ff99cc;\n}\n.sliderMain-title[data-v-16bf13c7] {\n  font-family: 'Gabriela', serif;\n  font-size: 40px;\n  line-height: 1.2;\n  padding: 3px 10px;\n  background-color: #fff;\n  position: absolute;\n  top: 20%;\n  right: 0;\n  color: black;\n  text-align: center;\n  z-index: 2;\n}\n.sliderMain-title[data-v-16bf13c7]:before {\n  content: '-';\n}\n", ""]);
+exports.push([module.i, "\n.base[data-v-16bf13c7] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n      -ms-flex-flow: row nowrap;\n          flex-flow: row nowrap;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  width: 90%;\n  max-width: 1480px;\n  margin: 50px auto;\n}\n.sliderMain-wrapper[data-v-16bf13c7] {\n  width: 70%;\n}\n.sliderMain-slide[data-v-16bf13c7] {\n  height: 580px;\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  position: relative;\n  pointer-events: all;\n}\n.sliderMain-slide img[data-v-16bf13c7] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.sliderMain-menu .title[data-v-16bf13c7] {\n  font-size: 18px;\n  text-transform: uppercase;\n  font-weight: 300;\n  margin: 0;\n  line-height: 1;\n}\n.sliderMain-menu .ul[data-v-16bf13c7] {\n  margin: 25px 0;\n  padding: 0;\n  list-style: none;\n}\n.sliderMain-menu .ul li[data-v-16bf13c7] {\n  font-size: 18px;\n  font-weight: 300;\n  margin: 12px 0;\n  cursor: pointer;\n}\n.sliderMain-menu .ul li.active span[data-v-16bf13c7] {\n  background-color: #ff99cc;\n}\n.sliderMain-title[data-v-16bf13c7] {\n  font-family: 'Gabriela', serif;\n  font-size: 40px;\n  line-height: 1.2;\n  padding: 3px 10px;\n  background-color: #fff;\n  position: absolute;\n  top: 20%;\n  right: 0;\n  color: black;\n  text-align: center;\n  z-index: 2;\n}\n.sliderMain-title[data-v-16bf13c7]:before {\n  content: '-';\n}\n", ""]);
 
 // exports
 
@@ -15614,6 +15616,7 @@ var render = function() {
                 return _c(
                   "li",
                   {
+                    key: index,
                     class: { active: index === _vm.slider_index },
                     on: {
                       click: function($event) {
@@ -15637,13 +15640,12 @@ var render = function() {
               return _c("el-ramka", { key: "slide" + index }, [
                 _c(
                   "div",
-                  {
-                    staticClass: "sliderMain-slide",
-                    style: {
-                      backgroundImage: "url(/storage/" + item.image + ")"
-                    }
-                  },
+                  { staticClass: "sliderMain-slide" },
                   [
+                    _c("img", {
+                      attrs: { src: "/storage/" + item.image, alt: "" }
+                    }),
+                    _vm._v(" "),
                     _c(
                       "router-link",
                       {
@@ -15970,7 +15972,7 @@ var render = function() {
         _vm._l(_vm.partners, function(item, index) {
           return _c(
             "div",
-            { staticClass: "prt-block", class: _vm.makeCol(index) },
+            { key: index, staticClass: "prt-block", class: _vm.makeCol(index) },
             [
               _c("e-ramka", [
                 _c("div", {
@@ -16621,9 +16623,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("li", [_vm._v("(+373) 69 00 33 55")])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "footer-map" } })
+      ])
     ])
   }
 ]

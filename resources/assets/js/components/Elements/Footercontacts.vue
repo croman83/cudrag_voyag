@@ -7,7 +7,7 @@
                 <li>(+373) 69 00 33 55</li>
             </ul>
         </address>
-        <div id="footer-map"></div>
+        <!-- <div id="footer-map"></div> -->
     </div>
 </template>
 <script>
@@ -31,7 +31,7 @@
             }
         },
         mounted(){
-            Mix.WGL(this.initmap);
+            // Mix.WGL(this.initmap);
         }
     }
 </script>

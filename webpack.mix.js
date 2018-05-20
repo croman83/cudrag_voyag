@@ -19,5 +19,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
     })
     .version()
     .browserSync({
-        proxy: 'cudrag.local'
+        proxy: 'cudrag-voyag.loc'
     });
